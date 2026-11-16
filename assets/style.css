@@ -139,8 +139,11 @@ a:hover { color: var(--accent-hover); }
 .price .czk { font-size: .8rem; }
 
 /* ---------- photo réelle (annonceur) ---------- */
-.photo { aspect-ratio: 4/3; display: grid; place-items: center; background: var(--surface); overflow: hidden; }
-.photo img { width: 100%; height: 100%; object-fit: contain; padding: .5rem; }
+/* Cadre 4/3 imposé : sans position absolute, les attributs width/height de l'img
+   écrasent l'aspect-ratio et les cartes prennent des hauteurs différentes. */
+.photo { aspect-ratio: 4/3; position: relative; background: var(--surface); overflow: hidden; }
+.photo img { position: absolute; inset: .5rem; width: calc(100% - 1rem); height: calc(100% - 1rem);
+  object-fit: contain; }
 
 /* ---------- typographic tile ---------- */
 .tile { position: relative; aspect-ratio: 4/3; display: flex; flex-direction: column;
