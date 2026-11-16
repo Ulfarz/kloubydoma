@@ -142,6 +142,9 @@ a:hover { color: var(--accent-hover); }
 /* Cadre 4/3 imposé : sans position absolute, les attributs width/height de l'img
    écrasent l'aspect-ratio et les cartes prennent des hauteurs différentes. */
 .photo { aspect-ratio: 4/3; position: relative; background: var(--surface); overflow: hidden; }
+/* Visuel sur fond noir assumé (photo d'annonceur non détourable) : on encadre. */
+.photo.is-dark { background: #000; }
+.photo.is-dark img { inset: 0; width: 100%; height: 100%; border-radius: 0; background: #000; }
 .photo img { position: absolute; inset: .5rem; width: calc(100% - 1rem); height: calc(100% - 1rem);
   object-fit: contain; }
 
