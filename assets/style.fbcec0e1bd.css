@@ -266,6 +266,15 @@ h1, h2, h3 { text-wrap: balance; }
   font-size: .78rem; color: var(--muted); }
 .foot-fine p { margin: 0 0 .3rem; }
 
+/* ---------- dodání a platba ---------- */
+.logi { margin: .9rem 0 0; border: 1px solid var(--line); border-radius: .8rem; overflow: hidden; }
+.logi-row { display: grid; grid-template-columns: 9.5rem 1fr; gap: 1rem; padding: .7rem 1rem;
+  border-top: 1px solid var(--line-2); }
+.logi-row:first-child { border-top: 0; }
+.logi dt { margin: 0; font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.logi dd { margin: 0; color: var(--ink-2); }
+@media (max-width: 34rem) { .logi-row { grid-template-columns: 1fr; gap: .15rem; } }
+
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
